@@ -10,10 +10,10 @@ class Application
     if req.path.match(/cards/) && req.get?
       return [200, {'Content-Type' => 'application/json'}, [Card.all.to_json]]
     elsif req.path.match(/login/) && req.post?
-      body= JSON.parse(req.body.read)
+      body = JSON.parse(req.body.read)
       user = User.find_by username: body["username"]
       if user
-        return [200, {"Content-Type" => "application/json"}, [user.to_json]] 
+        return [200, {"Content-Type" => "application/json"}, [user.name.to_json]] 
       end
     end
   end

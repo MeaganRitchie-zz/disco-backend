@@ -1,4 +1,5 @@
 Card.destroy_all
+User.destroy_all
 
 Card.create(
   [
@@ -36,3 +37,9 @@ Card.create(
     }
   ]
 )
+
+User.create(
+  [
+    name: "Jane"
+    highscore: 4
+  ])
