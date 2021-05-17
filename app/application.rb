@@ -13,8 +13,10 @@ class Application
       body = JSON.parse(req.body.read)
       user = User.find_by username: body["username"]
       if user
-        return [200, {"Content-Type" => "application/json"}, [user.name.to_json]] 
+        return [200, {"Content-Type" => "application/json"}, [User.username.to_json]] 
       end
+    elsif req.path.match(/highscore/) && req.get?
+      return [200, {'Content-Type' => 'application/json'}, [User.highscore.to_json]]
     end
   end
 

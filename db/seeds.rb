@@ -39,7 +39,7 @@ Card.create(
 )
 
 User.create(
-  [
-    name: "Jane"
-    highscore: 4
+  [{
+    username: "Jane",
+    highscore: 15}
   ])
